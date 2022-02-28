@@ -1,0 +1,35 @@
+{
+  "name": "cs648-spring-assignment4-api",
+  "version": "1.0.0",
+  "description": "MERN Stack Assignment 4 API",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e js, graphql -w . -w .env server.js",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HRSHDG8/cs648-spring-assignment4.git"
+  },
+  "author": "Harsh Maheshwari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HRSHDG8/cs648-spring-assignment4/issues"
+  },
+  "homepage": "https://github.com/HRSHDG8/cs648-spring-assignment4#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.21.0",
+    "core-js": "^3.21.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "mongodb": "^3.6.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.25.4",
+    "nodemon": "^2.0.7"
+  }
+}
