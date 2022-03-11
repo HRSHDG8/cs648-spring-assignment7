@@ -1,7 +1,7 @@
 {
   "name": "cs648-spring-assignment4-ui",
   "version": "1.0.0",
-  "description": "MERN Stack Assignment 4 UI",
+  "description": "CS 648 Spring Assignment 4 UI",
   "main": "index.js",
   "scripts": {
     "start": "npm run compile && nodemon -w uiserver.js -w .env uiserver.js",
