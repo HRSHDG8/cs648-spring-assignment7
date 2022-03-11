@@ -4,7 +4,7 @@
  * localhost:
  *   mongo myFirstDatabase scripts/init.mongo.js
  * Atlas:
- *   mongo "mongodb+srv://hmac:cs648@cluster0.uimtv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+ *   mongosh "mongodb+srv://hmac:cs648@cluster0.uimtv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
  * or open mongo shell navigate to current directory
  *  and run load('scripts/init.mongo.js')
  */
