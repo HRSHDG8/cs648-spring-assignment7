@@ -1,4 +1,3 @@
-"Fixed set of Product Categories"
 enum Category {
   Shirts
   Jeans
@@ -7,7 +6,6 @@ enum Category {
   Accessories
 }
 
-"Product Type"
 type Product {
   id: Int!
   name: String!
@@ -16,7 +14,6 @@ type Product {
   imageUrl: String
 }
 
-"Toned down Prodcut, used as inputs, without server generated values."
 input ProductInputs {
   name: String!
   category: Category!
