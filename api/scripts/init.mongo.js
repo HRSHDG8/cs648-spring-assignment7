@@ -13,20 +13,6 @@
 /* eslint no-restricted-globals: "off" */
 
 db.products.deleteMany({});
-// uncomment below to get a default file
-/*
-const initialProducts = [
-  {
-    id: 1,
-    name: "H&M",
-    category: 'Shirt',
-    price: '30',
-    imageUrl: 'https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F7a%2F0f%2F7a0fb6c70613d642ea0b57354bd8467a3f3e4bbe.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_tshirtstanks_shortsleeve%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]',
-  }
-];
-
-db.products.insertMany(initialProducts);
-*/
 const count = db.products.countDocuments();
 print('Inserted total of ', count, 'products');
 
