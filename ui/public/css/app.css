@@ -69,11 +69,12 @@ body {
 }
 
 .add-product-form label {
+  display: contents;
   margin-bottom: 10px;
 }
 
-.add-product-form input,
-.add-product-form select {
+.add-product-form-input,
+.add-product-form-select {
   width: 200px;
   padding: 5px;
 }
