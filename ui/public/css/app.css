@@ -71,6 +71,7 @@ body {
 .add-product-form label {
   display: contents;
   margin-bottom: 10px;
+  color: black;
 }
 
 .add-product-form-input,

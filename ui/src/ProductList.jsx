@@ -1,4 +1,5 @@
 import React from 'react';
+import { Panel } from 'react-bootstrap';
 import ProductTable from './ProductTable.jsx';
 import ProductAdd from './ProductAdd.jsx';
 import graphQLFetch from './graphQLFetch.js';
@@ -91,7 +92,14 @@ export default class ProductList extends React.Component {
           />
           <div>Add a new Product</div>
           <hr />
-          <ProductAdd addProduct={this.addProduct} />
+          <Panel defaultExpanded className="panel-dark">
+            <Panel.Heading>
+              <Panel.Title toggle>Add a new Product</Panel.Title>
+            </Panel.Heading>
+            <Panel.Body collapsible>
+              <ProductAdd addProduct={this.addProduct} />
+            </Panel.Body>
+          </Panel>
         </div>
       </React.Fragment>
     );
