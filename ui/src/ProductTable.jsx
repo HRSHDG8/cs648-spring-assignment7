@@ -17,6 +17,10 @@ function ProductTableRow({ product, deleteProduct, index }) {
     <Tooltip id="delete-tooltip" placement="top">Delete Product</Tooltip>
   );
 
+  const viewImageTooltip = (
+    <Tooltip id="view-tooltip" placement="top">View Image</Tooltip>
+  );
+
   const editTooltip = (
     <Tooltip id="close-tooltip" placement="top">Edit Product</Tooltip>
   );
@@ -31,10 +35,16 @@ function ProductTableRow({ product, deleteProduct, index }) {
       <td>{name || NO_DATA_AVAILABLE}</td>
       <td>{price ? `$${price}` : NO_DATA_AVAILABLE}</td>
       <td>{category}</td>
-      <td>{imageUrl ? (<Link to={`/img/${id}`}>View</Link>) : NO_DATA_AVAILABLE}</td>
+      <td>
+        {imageUrl ? (
+          <OverlayTrigger delayShow={500} overlay={viewImageTooltip}>
+            <Link to={`/img/${id}`}>View</Link>
+          </OverlayTrigger>
+        ) : NO_DATA_AVAILABLE}
+      </td>
       <td>
         <LinkContainer to={`/edit/${id}`}>
-          <OverlayTrigger delayShow={1000} overlay={editTooltip}>
+          <OverlayTrigger delayShow={500} overlay={editTooltip}>
             <Button bsSize="xsmall">
               <Glyphicon glyph="edit" />
             </Button>
@@ -43,7 +53,7 @@ function ProductTableRow({ product, deleteProduct, index }) {
 
         {' | '}
 
-        <OverlayTrigger delayShow={1000} overlay={deleteTooltip}>
+        <OverlayTrigger delayShow={500} overlay={deleteTooltip}>
           <Button bsSize="xsmall" onClick={e => onDelete(e)}>
             <Glyphicon glyph="trash" />
           </Button>
