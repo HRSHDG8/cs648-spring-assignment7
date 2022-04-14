@@ -1,7 +1,7 @@
 {
-  "name": "cs648-spring-assignment5-ui",
+  "name": "cs648-spring-assignment6-ui",
   "version": "1.0.0",
-  "description": "CS 648 Spring Assignment 4 UI",
+  "description": "CS 648 Spring Assignment 6 UI",
   "main": "index.js",
   "scripts": {
     "#start": "To start UI server. HMR is enabled in dev mode.",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HRSHDG8/cs648-spring-assignment5.git"
+    "url": "git+https://github.com/HRSHDG8/cs648-spring-assignment6.git"
   },
   "author": "Harsh Maheshwari",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HRSHDG8/cs648-spring-assignment5/issues"
+    "url": "https://github.com/HRSHDG8/cs648-spring-assignment6/issues"
   },
-  "homepage": "https://github.com/HRSHDG8/cs648-spring-assignment5#readme",
+  "homepage": "https://github.com/HRSHDG8/cs648-spring-assignment6#readme",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "dotenv": "^8.2.0",
