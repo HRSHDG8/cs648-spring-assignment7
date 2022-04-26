@@ -47,6 +47,25 @@ const remove = async (_, { id }) => {
   return false;
 };
 
+const count = async () => {
+  let productCount = 0;
+  const db = getDb();
+  const products = await db.collection('products')
+    .aggregate([
+      {
+        $group: {
+          _id: null,
+          total: { $sum: 1 },
+        },
+      },
+    ]).toArray();
+
+  if (products.length > 0) {
+    productCount = products[0].total;
+  }
+  return productCount;
+};
+
 module.exports = {
-  get, list, add, update, delete: remove,
+  get, list, add, update, delete: remove, count,
 };

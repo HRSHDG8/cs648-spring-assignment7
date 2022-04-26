@@ -9,7 +9,7 @@ const productTableHeadings = ['Product Name', 'Price', 'Category', 'Image'];
 export default class ProductList extends React.Component {
   constructor() {
     super();
-    this.state = { products: [], initialLoading: true };
+    this.state = { productCount: 0, products: [], initialLoading: true };
     this.addProduct = this.addProduct.bind(this);
     this.deleteProduct = this.deleteProduct.bind(this);
   }
@@ -18,7 +18,19 @@ export default class ProductList extends React.Component {
     this.loadData();
   }
 
+  async productCount() {
+    const query = `query {
+              productCount
+          }`;
+
+    const data = await graphQLFetch(query);
+    if (data) {
+      this.setState({ productCount: data.productCount });
+    }
+  }
+
   async loadData() {
+    this.productCount();
     const query = `
             query {
                 productList {
@@ -69,6 +81,7 @@ export default class ProductList extends React.Component {
           history.push({ pathname: '/products', search });
         }
         newList.splice(index, 1);
+        this.loadData();
         return { products: newList };
       });
     } else {
@@ -77,12 +90,11 @@ export default class ProductList extends React.Component {
   }
 
   render() {
-    const { products, initialLoading } = this.state;
+    const { products, initialLoading, productCount } = this.state;
     return (
       <React.Fragment>
         <div className="root-container">
-          <h2>My Company Inventory</h2>
-          <div>Showing all available products</div>
+          <div>{`Showing ${productCount} available products`}</div>
           <hr />
           <ProductTable
             headings={productTableHeadings}
@@ -90,7 +102,6 @@ export default class ProductList extends React.Component {
             loading={initialLoading}
             deleteProduct={this.deleteProduct}
           />
-          <div>Add a new Product</div>
           <hr />
           <Panel defaultExpanded className="panel-dark">
             <Panel.Heading>
